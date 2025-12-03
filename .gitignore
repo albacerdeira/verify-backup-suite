@@ -17,6 +17,9 @@ backups/incremental/*.sha256
 # Status e relatórios
 status.json
 
+# AWS CLI binários (pasta dist/ é muito grande)
+aws/dist/
+
 # PHPMailer vendor (se houver)
 PHPMailer/vendor/
 
