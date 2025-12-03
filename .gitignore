@@ -2,6 +2,11 @@
 # BACKUP SUITE - Git Ignore
 # ===================================================
 
+# CREDENCIAIS (NUNCA COMMITAR!)
+.env
+.env.local
+.config.php
+
 # Logs
 *.log
 logs/
