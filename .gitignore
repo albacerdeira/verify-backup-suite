@@ -17,9 +17,6 @@ backups/incremental/*.sha256
 # Status e relatórios
 status.json
 
-# AWS CLI instalado localmente
-aws_cli_linux/
-
 # PHPMailer vendor (se houver)
 PHPMailer/vendor/
 

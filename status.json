@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-12-01T12:00:00Z",
+  "replication": {
+    "io_running": "Yes",
+    "sql_running": "Yes",
+    "seconds_behind_master": 0
+  },
+  "backups": {
+    "latest_full": "2025-12-01 02:00:00",
+    "hours_since_full": 10
+  },
+  "disk": {
+    "backup_usage_percent": 42
+  }
+}
