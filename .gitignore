@@ -1,0 +1,39 @@
+# ===================================================
+# BACKUP SUITE - Git Ignore
+# ===================================================
+
+# Logs
+*.log
+logs/
+
+# Backups gerados (não versionar backups de produção)
+backups/*.sql.gz
+backups/*.sql
+backups/*.sha256
+backups/incremental/*.sql.gz
+backups/incremental/*.sql
+backups/incremental/*.sha256
+
+# Status e relatórios
+status.json
+
+# AWS CLI instalado localmente
+aws_cli_linux/
+
+# PHPMailer vendor (se houver)
+PHPMailer/vendor/
+
+# Arquivos temporários
+*.tmp
+*.temp
+tmp/
+
+# Arquivos de sistema
+.DS_Store
+.idea/
+.vscode/
+
+# NÃO ignorar os scripts principais
+!*.sh
+!*.php
+!*.md
