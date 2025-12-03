@@ -4,11 +4,12 @@
 # Envia o backup mais recente para S3
 # ============================================
 
-# Carregar variáveis do .env
-if [ -f "/home/u640879529/domains/verifyonline.com.br/public_html/.env" ]; then
-    export $(grep -v '^#' /home/u640879529/domains/verifyonline.com.br/public_html/.env | xargs)
+# Carregar variáveis do .env (raiz do projeto, fora do public_html)
+ENV_FILE="/home/u640879529/.env"
+if [ -f "$ENV_FILE" ]; then
+    export $(grep -v '^#' $ENV_FILE | xargs)
 else
-    echo "[ERRO] Arquivo .env não encontrado!"
+    echo "[ERRO] Arquivo .env não encontrado em $ENV_FILE"
     exit 1
 fi
 
