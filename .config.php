@@ -2,20 +2,15 @@
 /**
  * Configuração Centralizada de Credenciais - BACKUP SUITE
  * 
- * Carrega variáveis do arquivo .env local ou do .env na raiz do servidor
+ * Carrega variáveis do arquivo .env na mesma pasta
  */
 
-// Tentar carregar .env local primeiro (para desenvolvimento)
-$envFile = __DIR__ . '/.env.local';
+// .env está na mesma pasta do .config.php
+$envFile = __DIR__ . '/.env';
 
-// Se não existir, usar .env da raiz do servidor (produção)
+// Se não existir, erro
 if (!file_exists($envFile)) {
-    $envFile = '/home/u640879529/.env';
-}
-
-// Se ainda não existir, erro
-if (!file_exists($envFile)) {
-    die("ERRO: Arquivo .env não encontrado\n");
+    die("ERRO: Arquivo .env não encontrado em $envFile\n");
 }
 
 // Função para carregar variáveis do .env

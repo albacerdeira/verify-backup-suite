@@ -5,8 +5,10 @@
 # Usa binlog do MySQL para capturar apenas alterações
 # ============================================
 
-# Carregar variáveis do .env (raiz do projeto, fora do public_html)
-ENV_FILE="/home/u640879529/.env"
+# Carregar variáveis do .env (mesma pasta do script)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENV_FILE="$SCRIPT_DIR/.env"
+
 if [ -f "$ENV_FILE" ]; then
     export $(grep -v '^#' $ENV_FILE | xargs)
 else

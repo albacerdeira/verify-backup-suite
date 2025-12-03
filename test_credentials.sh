@@ -1,12 +1,15 @@
 #!/bin/bash
 # Script de teste local para verificar credenciais
 
-# Carregar .env.local
-if [ -f ".env.local" ]; then
-    export $(grep -v '^#' .env.local | xargs)
-    echo "✓ .env.local carregado"
+# Carregar .env da mesma pasta
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENV_FILE="$SCRIPT_DIR/.env"
+
+if [ -f "$ENV_FILE" ]; then
+    export $(grep -v '^#' $ENV_FILE | xargs)
+    echo "✓ .env carregado de $ENV_FILE"
 else
-    echo "✗ .env.local não encontrado"
+    echo "✗ .env não encontrado em $ENV_FILE"
     exit 1
 fi
 
